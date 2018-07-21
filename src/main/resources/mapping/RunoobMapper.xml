@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cl.code.springbootmybatis.mapper.RunoobMapper">
+    <resultMap id="BaseResultMap" type="com.cl.code.springbootmybatis.model.Runoob">
+        <id column="runoob_id" property="runoobId" jdbcType="INTEGER"/>
+        <result column="runoob_title" property="runoobTitle" jdbcType="VARCHAR"/>
+        <result column="runoob_author" property="runoobAuthor" jdbcType="VARCHAR"/>
+        <result column="submission_date" property="submissionDate" jdbcType="DATE"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    runoob_id, runoob_title, runoob_author, submission_date
+  </sql>
+    <select id="findAll" resultMap="BaseResultMap" >
+        select
+        <include refid="Base_Column_List"/>
+        from runoob_tbl
+
+    </select>
+    <!-- 这个方法是我自己加的 -->
+    <select id="findOne" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from runoob_tbl
+        where runoob_id = #{runoobId}
+    </select>
+</mapper>
