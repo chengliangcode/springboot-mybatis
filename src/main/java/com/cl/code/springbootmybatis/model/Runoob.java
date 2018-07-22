@@ -1,17 +1,18 @@
 package com.cl.code.springbootmybatis.model;
 
-import java.util.Date;
+
+import java.sql.Timestamp;
 
 public class Runoob {
     private Long runoobId;
     private String runoobTitle;
     private String runoobAuthor;
-    private Date submissionDate;
+    private Timestamp submissionDate;
 
     public Runoob() {
     }
 
-    public Runoob(Long runoobId, String runoobTitle, String runoobAuthor, Date submissionDate) {
+    public Runoob(Long runoobId, String runoobTitle, String runoobAuthor, Timestamp submissionDate) {
         this.runoobId = runoobId;
         this.runoobTitle = runoobTitle;
         this.runoobAuthor = runoobAuthor;
@@ -42,11 +43,11 @@ public class Runoob {
         this.runoobAuthor = runoobAuthor;
     }
 
-    public Date getSubmissionDate() {
+    public Timestamp getSubmissionDate() {
         return submissionDate;
     }
 
-    public void setSubmissionDate(Date submissionDate) {
+    public void setSubmissionDate(Timestamp submissionDate) {
         this.submissionDate = submissionDate;
     }
 

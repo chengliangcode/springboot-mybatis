@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cl.code.springbootmybatis.mapper.RunoobMapper">
     <resultMap id="BaseResultMap" type="com.cl.code.springbootmybatis.model.Runoob">
-        <id column="runoob_id" property="runoobId" jdbcType="INTEGER"/>
-        <result column="runoob_title" property="runoobTitle" jdbcType="VARCHAR"/>
-        <result column="runoob_author" property="runoobAuthor" jdbcType="VARCHAR"/>
-        <result column="submission_date" property="submissionDate" jdbcType="DATE"/>
+        <id column="runoob_id" property="runoobId" />
+        <result column="runoob_title" property="runoobTitle" />
+        <result column="runoob_author" property="runoobAuthor" />
+        <result column="submission_date" property="submissionDate" />
     </resultMap>
     <sql id="Base_Column_List">
     runoob_id, runoob_title, runoob_author, submission_date

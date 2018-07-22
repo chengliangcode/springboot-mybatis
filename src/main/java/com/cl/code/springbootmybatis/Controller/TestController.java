@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
+import java.util.Date;
 
 @RestController
 public class TestController {
@@ -22,7 +24,16 @@ public class TestController {
 
     @RequestMapping(value = "/findAll", method = RequestMethod.GET)
     public ArrayList<Runoob> findAll() {
-        return runoobMapper.findAll();
+
+        System.out.println(new Date());
+        System.out.println(new Date().getTime());
+        Timestamp timestamp = new Timestamp(new Date().getTime());
+        System.out.println(timestamp);
+        ArrayList<Runoob> runoobs = runoobMapper.findAll();
+        for (Runoob runoob:runoobs) {
+            System.out.println(runoob);
+        }
+        return runoobs;
     }
 
 }
