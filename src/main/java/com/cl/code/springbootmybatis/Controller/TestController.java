@@ -14,7 +14,8 @@ public class TestController {
     @Autowired
     private RunoobMapper runoobMapper;
 
-    @RequestMapping(value = "/book/hello", method = RequestMethod.GET)
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String sayHello() {
         return "Hello，《Spring Boot 2.x 核心技术实战 - 上 基础篇》！";
     }
@@ -23,4 +24,5 @@ public class TestController {
     public ArrayList<Runoob> findAll() {
         return runoobMapper.findAll();
     }
+
 }
